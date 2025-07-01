@@ -7,7 +7,7 @@ env:
 jobs:
   build-action-push:
     runs-on ubuntu-latest
-    environment: DOCKER_ENV
+    #environment: DOCKER_ENV
     steps:
     - name: Checkout Code
       user: action/checkout@v3
