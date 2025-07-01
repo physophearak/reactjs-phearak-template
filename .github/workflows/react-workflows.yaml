@@ -1,19 +1,18 @@
-on:
-  push:
+on: 
+  push: 
     branches: ["master"]
-
-env:
-  IMAGE_NAME: reactjs-frontend-gcp
-jobs:
-  build-action-push:
-    runs-on ubuntu-latest
+env: 
+  DOCKER_IMAGE: reactjs-frontend-gcp
+jobs: 
+  build-and-push: 
+    runs-on: ubuntu-latest
     #environment: DOCKER_ENV
-    steps:
-    - name: Checkout Code
-      user: action/checkout@v3
-    -name: Use with SHA
-      run:|
-        echo "TAG=${GITHUB_SHA::8}" >> $GITHUB_ENV
-    - name: Show the TAGS values
-      run: |
-        echo "TAG value is : ${{ env.TAG }}"
+    steps: 
+      - name: Checkout code 
+        uses: actions/checkout@v3
+      - name: Use with SHA 
+        run: |
+          echo "TAG=${GITHUB_SHA::8}" >> $GITHUB_ENV
+      - name: Show the TAGS values
+        run: |
+          echo "TAG value is : ${{ env.TAG }}"
