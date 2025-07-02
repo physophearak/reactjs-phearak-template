@@ -29,4 +29,3 @@ jobs:
         if: always()
         run: |
           docker logout
-
